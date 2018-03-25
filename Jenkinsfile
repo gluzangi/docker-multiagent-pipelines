@@ -5,7 +5,7 @@ pipeline {
             agent {
                 docker {
                     image 'php:cli'
-                    args  '-v /tmp:/tmp'
+                    args  '-v $HOME:/tmp'
                     /* customWorkspace '/tmp/workx' */
                 }
             }
@@ -19,7 +19,7 @@ pipeline {
             agent {
                 docker {
                     image 'mariadb:latest' 
-                    args  '-v /tmp:/tmp'
+                    args  '-v $HOME:/tmp'
                     /* customWorkspace '/tmp/workx' */
                 }
             }
