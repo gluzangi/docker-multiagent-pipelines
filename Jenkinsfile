@@ -6,7 +6,7 @@ pipeline {
                 docker {
                     image 'python:2-alpine'
                     args  '-v /tmp:/tmp'
-                    customWorkspace '/tmp/workx'
+                    /* customWorkspace '/tmp/workx' */
                 }
             }
             steps {
@@ -18,7 +18,7 @@ pipeline {
                 docker {
                     image 'mariadb:latest' 
                     args  '-v /tmp:/tmp'
-                    customWorkspace '/tmp/workx'
+                    /* customWorkspace '/tmp/workx' */
                 }
             }
             steps {
