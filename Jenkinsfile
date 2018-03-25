@@ -18,7 +18,7 @@ pipeline {
                 }
             }
             steps {
-                sh 'mysql --print-default' 
+                sh 'mysql --print-defaults' 
             }
             post {
                 always {
