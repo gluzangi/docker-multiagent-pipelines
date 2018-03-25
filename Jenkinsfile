@@ -16,6 +16,7 @@ pipeline {
             }
             post {
                 always {
+                    deleteDir()
                     echo 'Jenkins Says - I am Done Building!' 
                 }
             }
@@ -35,6 +36,7 @@ pipeline {
             }
             post {
                 always {
+                    deleteDir()
                     echo 'Jenkins Says - I am Done Testing!' 
                 }
             }
@@ -42,7 +44,6 @@ pipeline {
     }
     post {
         always {
-            deleteDir()
             echo 'Jenkins Says - I AM DONE & DONER YAY!'
         }
     }
