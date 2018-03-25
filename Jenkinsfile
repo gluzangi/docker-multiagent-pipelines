@@ -14,6 +14,11 @@ pipeline {
                 sh 'php -m | tee -a /tmp/php-modules.out'
                 sh 'ls -al /tmp/'
             }
+            post {
+                always {
+                    echo 'Jenkins Says - I am Done Building!' 
+                }
+            }
         }
         stage('Test') { 
             agent {
@@ -30,9 +35,15 @@ pipeline {
             }
             post {
                 always {
-                    echo 'Jenkins Says - I am done Yay!' 
+                    echo 'Jenkins Says - I am Done Testing!' 
                 }
             }
+        }
+    }
+    post {
+        always {
+            deleteDir()
+            echo 'Jenkins Says - I AM DONE & DONER YAY!'
         }
     }
 }
