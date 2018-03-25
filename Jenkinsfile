@@ -4,13 +4,14 @@ pipeline {
         stage('Build') {
             agent {
                 docker {
-                    image 'python:2-alpine'
+                    image 'php:cli'
                     args  '-v /tmp:/tmp'
                     /* customWorkspace '/tmp/workx' */
                 }
             }
             steps {
-                sh 'python -V'
+                sh 'php -m | tee -a /tmp/php-modules.out'
+                sh 'ls -al ./'
             }
         }
         stage('Test') { 
@@ -22,7 +23,8 @@ pipeline {
                 }
             }
             steps {
-                sh 'mysql --print-defaults' 
+                sh 'mysql --print-defaults | tee -a /tmp/mysql-defaults.out'
+                sh 'ls -al ./'
             }
             post {
                 always {
