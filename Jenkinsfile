@@ -10,8 +10,9 @@ pipeline {
                 }
             }
             steps {
-                sh 'php -m | tee -a /tmp/php-modules.out'
                 sh 'ls -al ./'
+                sh 'php -m | tee -a /tmp/php-modules.out'
+                sh 'ls -al /tmp/'
             }
         }
         stage('Test') { 
@@ -23,8 +24,9 @@ pipeline {
                 }
             }
             steps {
-                sh 'mysql --print-defaults | tee -a /tmp/mysql-defaults.out'
                 sh 'ls -al ./'
+                sh 'mysql --print-defaults | tee -a /tmp/mysql-defaults.out'
+                sh 'ls -al /tmp/'
             }
             post {
                 always {
