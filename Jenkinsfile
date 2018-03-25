@@ -5,6 +5,8 @@ pipeline {
             agent {
                 docker {
                     image 'python:2-alpine'
+                    args  '-v /tmp:/tmp'
+                    customWorkspace '/tmp/workx'
                 }
             }
             steps {
@@ -15,6 +17,8 @@ pipeline {
             agent {
                 docker {
                     image 'mariadb:latest' 
+                    args  '-v /tmp:/tmp'
+                    customWorkspace '/tmp/workx'
                 }
             }
             steps {
