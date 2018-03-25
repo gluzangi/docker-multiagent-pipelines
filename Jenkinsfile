@@ -6,7 +6,6 @@ pipeline {
                 docker {
                     image 'php:cli'
                     args  '-v $HOME/.jenkins/work-1:/tmp'
-                    /* customWorkspace '/tmp/workx' */
                 }
             }
             steps {
@@ -26,7 +25,6 @@ pipeline {
                 docker {
                     image 'mariadb:latest' 
                     args  '-v $HOME/.jenkins/work-1:/tmp'
-                    /* customWorkspace '/tmp/workx' */
                 }
             }
             steps {
