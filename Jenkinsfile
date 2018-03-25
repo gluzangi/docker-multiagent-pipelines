@@ -44,7 +44,7 @@ pipeline {
     }
     post {
         always {
-            deleteDir(/tmp/)
+            deleteDir('/tmp/')
             echo 'Jenkins Says - I AM DONE & DONER YAY!'
         }
     }
